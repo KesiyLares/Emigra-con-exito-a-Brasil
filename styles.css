@@ -1,0 +1,166 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root{
+  --background: #F6F7BD;
+  --black: #111111;
+  --orange: #E2A727;
+  --white: #FFFFFF;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  font-family: 'Barlow Condensed', sans-serif;
+  color: var(--black);
+}
+
+p {
+  font-family: 'Questrial', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: var(--background);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 12% 6%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 100%;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 2.6rem;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+h1 > span {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+p {
+  text-align: center;
+}
+
+.cards-container {
+  margin-block: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.image-container {
+  width: 300px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 3px solid var(--white);
+  background-color: var(--black);
+}
+
+.image-container img{
+  border-radius: 10px;
+}
+
+.link-button {
+  width: 180px;
+  height: 70px;
+  display: block;
+  padding: 5px 15px;
+  background-color: var(--orange);
+  border: 2px solid var(--white);
+  border-radius: 20px;
+  margin: 0px auto;
+  color: var(--white);
+  text-decoration: none;
+  position: relative;
+  bottom: 30px;
+  box-shadow:
+    4px 5px 0px var(--orange),
+    4px 5px 0px 2px  var(--white);
+}
+
+.card-text {
+  font-size: 1.8rem;
+}
+
+.card-logo {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  bottom: -10px;
+  left: -4px;
+}
+
+.card-price {
+  font-size: 3rem;
+  line-height: 1;
+  margin-left: -5px;
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    padding: 40px;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h1 > span {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  .cards-container {
+    margin-block: 50px;
+    gap: 40px;
+  }
+  .image-container {
+    width: 400px;
+    padding: 20px;
+    border-radius: 30px;
+    border: 3px solid var(--white);
+  }
+  .image-container img{
+    border-radius: 20px;
+  }
+  .link-button {
+    width: 230px;
+    height: 80px;
+    padding: 10px 20px;
+    border: 3px solid var(--white);
+    bottom: 45px;
+    box-shadow:
+      5px 6px 0px var(--orange),
+      5px 6px 0px 3px var(--white);
+  }
+  .card-text {
+    font-size: 2.4rem;
+  }
+  .card-price {
+    font-size: 3.4rem;
+  }
+}
