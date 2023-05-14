@@ -38,9 +38,10 @@ img {
 }
 
 main {
-  max-width: 1000px;
+  max-width: 1400px;
+  min-height: 100vh;
   margin: auto;
-  padding: 12% 6%;
+  padding: 40px 6%;
   display: grid;
   place-items: center;
   grid-template-columns: 100%;
@@ -51,6 +52,8 @@ h1 {
   font-size: 2.6rem;
   line-height: 1.2;
   margin-bottom: 25px;
+  text-align: center;
+  z-index: 1;
 }
 
 h1 > span {
@@ -61,6 +64,19 @@ h1 > span {
 
 p {
   text-align: center;
+  z-index: 1;
+}
+
+.background-mobile {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  z-index: -1;
 }
 
 .cards-container {
@@ -69,6 +85,7 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+  z-index: 1;
 }
 
 .image-container {
@@ -96,9 +113,17 @@ p {
   text-decoration: none;
   position: relative;
   bottom: 30px;
+  cursor: pointer;
   box-shadow:
     4px 5px 0px var(--orange),
     4px 5px 0px 2px  var(--white);
+  transition: 0.3s;
+}
+
+.link-button:hover,
+.link-button:focus {
+  transform: scale(1.05);
+  transition: 0.3s;
 }
 
 .card-text {
@@ -120,10 +145,88 @@ p {
   margin-left: -5px;
 }
 
-@media screen and (min-width: 1200px) {
-  main {
-    padding: 40px;
+.main-checkout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column-reverse;
+  gap: 30px;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+.checkout-title {
+  justify-self: flex-start;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.instruction-container {
+  padding: 20px 0px;
+  background-color: rgba(255, 255, 255, 0.45);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.arrow-container {
+  width: 40px;
+  height: 40px;
+  margin: 10px auto;
+  transform: rotate(90deg);
+}
+
+.arrow-container svg {
+  fill: var(--orange);
+}
+
+.account-info {
+  text-align: center;
+}
+
+.divider{
+  width: 90%;
+  height: 2px;
+  margin: 10px auto;
+  background-color: var(--black);
+  opacity: 0.3;
+}
+
+.checkout-link {
+  color: var(--orange);
+}
+
+.wapp-container {
+  width: 80px;
+  margin: auto;
+  padding-left: 15px;
+}
+
+.wapp-container svg {
+  fill: var(--orange);
+}
+
+@media screen and (min-width: 1000px) {
+  .main-checkout {
+    flex-direction: row;
+    gap: 50px;
   }
+  .link-button{
+    box-shadow: none;
+    bottom: 25px;
+  }
+  .link-button:hover,
+  .link-button:focus {
+    transform: translate(-6px, -7px);
+    box-shadow:
+      4px 5px 0px var(--orange),
+      4px 5px 0px 2px  rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media screen and (min-width: 1200px) {
   h1 {
     font-size: 3rem;
   }
@@ -152,10 +255,14 @@ p {
     height: 80px;
     padding: 10px 20px;
     border: 3px solid var(--white);
-    bottom: 45px;
+    bottom: 35px;
+  }
+  .link-button:hover,
+  .link-button:focus {
+    transform: translate(-8px, -9px);
     box-shadow:
       5px 6px 0px var(--orange),
-      5px 6px 0px 3px var(--white);
+      5px 6px 0px 3px rgba(0, 0, 0, 0.2);
   }
   .card-text {
     font-size: 2.4rem;
