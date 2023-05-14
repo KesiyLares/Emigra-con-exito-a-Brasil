@@ -77,6 +77,9 @@ p {
   justify-content: space-between;
   align-content: center;
   z-index: -1;
+  background-image: url(./assets/background.svg);
+  background-repeat: repeat-y;
+  background-size: 100%;
 }
 
 .cards-container {
@@ -126,6 +129,10 @@ p {
   transition: 0.3s;
 }
 
+.card h2 {
+  text-align: center;
+}
+
 .card-text {
   font-size: 1.8rem;
 }
@@ -165,7 +172,7 @@ h2 {
 }
 
 .instruction-container {
-  padding: 20px 0px;
+  padding: 20px 20px;
   background-color: rgba(255, 255, 255, 0.45);
   border-radius: 10px;
   text-align: center;
@@ -209,7 +216,11 @@ h2 {
 }
 
 @media screen and (min-width: 1000px) {
+  main {
+    padding: 40px 12%;
+  }
   .main-checkout {
+    padding: 40px 0;
     flex-direction: row;
     gap: 50px;
   }
@@ -223,6 +234,9 @@ h2 {
     box-shadow:
       4px 5px 0px var(--orange),
       4px 5px 0px 2px  rgba(0, 0, 0, 0.2);
+  }
+  .instruction-container{
+    padding: 20px 50px;
   }
 }
 
